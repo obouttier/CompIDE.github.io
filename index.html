@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Comp' IDE</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+    
+    <body onload="move()">
+        <div class="w3-bar w3-border w3-black">
+        <a href="index.html" class="w3-bar-item w3-button w3-hover-none w3-bottombar w3-hover-border-green w3-hover-text-green">Accueil</a>
+        <a href="introduction.html" class="w3-bar-item w3-button w3-hover-none w3-bottombar w3-hover-border-green w3-hover-text-green">Introduction</a>
+        
+        <button class="w3-button w3-hover-none w3-bottombar w3-hover-border-green w3-hover-text-green" onclick="myFunction()">Languages<i class="fa fa-caret-down"></i></button>
+        <div id="demo" class="w3-dropdown-content w3-bar-block w3-card-4 w3-bottombar w3-hover-text-blue w3-hover-border-blue">
+        <a href="java.html" class="w3-bar-item w3-button">Java</a>
+        <a href="python.html" class="w3-bar-item w3-button">Python</a>
+        <a href="htmlcss.html" class="w3-bar-item w3-button">HTML/CSS</a>
+        </div>
+        </div>
+        <!-- Titre -->
+        <p class="title">Comp' IDE</p>
+        <!-- Contenu principal -->
+        <div class="w3-panel w3-border w3-round-xlarge">
+            <p class="firstParagraph">Vous souhaitez commencer le développement mais vous savez pas par ou commencer,<br> pas de problème, notre site est la pour vous aidez.<br>Vous allez trouver le logiciel le plus adapté à vous !</p>
+        </div>
+        <div class="w3-light-grey">
+            <div id="myBar" class="w3-container w3-green w3-center" style="height:24px;width:1%">Aprouver à 100%, ce site trouvera votre IDE.</div>
+        </div>
+
+        <script>
+            function myFunction() 
+            {
+                var x = document.getElementById("demo");
+                if (x.className.indexOf("w3-show") == -1) 
+                {
+                    x.className += " w3-show";
+                } else 
+                { 
+                    x.className = x.className.replace(" w3-show", "");
+                }
+            }
+            function move() 
+            {
+                var elem = document.getElementById("myBar");
+                var width = 1;
+                var id = setInterval(frame, 10);
+                function frame() 
+                {
+                    if (width >= 100) 
+                    {
+                        clearInterval(id);
+                    } else 
+                    {
+                        width++;
+                        elem.style.width = width + '%';
+                    }
+                }
+            }
+        </script>
+        
+    </body>
+</html>
+
